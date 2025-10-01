@@ -4,9 +4,6 @@
  * Sanford and Hun Film and Photography Website
  */
 
-// Import analytics tracking functions
-import { trackGalleryInteraction } from './analytics.js';
-
 class FamilyGallery {
     constructor() {
         // Gallery configuration - using family gallery images
@@ -158,7 +155,9 @@ class FamilyGallery {
         if (this.loadMoreBtn) {
             this.loadMoreBtn.addEventListener('click', () => {
                 // Track load more action
-                trackGalleryInteraction('family', 'load_more', this.loadedImagesCount);
+                if (window.Analytics) {
+                    window.Analytics.trackGalleryInteraction('family', 'load_more', this.loadedImagesCount);
+                }
                 
                 this.loadImages();
                 // Observe newly added items
@@ -222,7 +221,9 @@ class FamilyGallery {
             this.updateCounter();
             
             // Track lightbox open
-            trackGalleryInteraction('family', 'open', index);
+            if (window.Analytics) {
+                window.Analytics.trackGalleryInteraction('family', 'open', index);
+            }
             
             // Show lightbox
             this.lightboxOverlay.classList.add('active');
@@ -239,7 +240,9 @@ class FamilyGallery {
     closeLightbox() {
         if (this.lightboxOverlay) {
             // Track lightbox close
-            trackGalleryInteraction('family', 'close', this.currentImageIndex);
+            if (window.Analytics) {
+                window.Analytics.trackGalleryInteraction('family', 'close', this.currentImageIndex);
+            }
             
             this.lightboxOverlay.classList.remove('active');
             document.body.style.overflow = ''; // Restore scrolling
@@ -253,7 +256,9 @@ class FamilyGallery {
         this.currentImageIndex = (this.currentImageIndex - 1 + this.galleryImages.length) % this.galleryImages.length;
         
         // Track navigation
-        trackGalleryInteraction('family', 'previous', this.currentImageIndex);
+        if (window.Analytics) {
+            window.Analytics.trackGalleryInteraction('family', 'previous', this.currentImageIndex);
+        }
         
         this.updateLightboxImage();
     }
@@ -265,7 +270,9 @@ class FamilyGallery {
         this.currentImageIndex = (this.currentImageIndex + 1) % this.galleryImages.length;
         
         // Track navigation
-        trackGalleryInteraction('family', 'next', this.currentImageIndex);
+        if (window.Analytics) {
+            window.Analytics.trackGalleryInteraction('family', 'next', this.currentImageIndex);
+        }
         
         this.updateLightboxImage();
     }

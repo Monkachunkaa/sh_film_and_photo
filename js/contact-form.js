@@ -4,9 +4,6 @@
  * Sanford and Hun Film and Photography Website
  */
 
-// Import analytics tracking functions
-import { trackFormSubmission, trackEvent } from './analytics.js';
-
 class ContactForm {
     constructor() {
         // DOM elements
@@ -220,10 +217,12 @@ class ContactForm {
             await this.submitForm(formData);
             
             // Track successful form submission
-            trackFormSubmission('contact', {
-                has_phone: !!formData.phone,
-                message_length: formData.message.length
-            });
+            if (window.Analytics) {
+                window.Analytics.trackFormSubmission('contact', {
+                    has_phone: !!formData.phone,
+                    message_length: formData.message.length
+                });
+            }
             
             // Show success message
             this.showSuccess();
@@ -235,10 +234,12 @@ class ContactForm {
             console.error('Form submission error:', error);
             
             // Track form submission error
-            trackEvent('form_error', {
-                form_type: 'contact',
-                error_message: error.message
-            });
+            if (window.Analytics) {
+                window.Analytics.trackEvent('form_error', {
+                    form_type: 'contact',
+                    error_message: error.message
+                });
+            }
             
             this.showError('Sorry, there was an error sending your message. Please try again or contact us directly.');
         } finally {
