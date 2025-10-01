@@ -4,18 +4,22 @@
  * Sanford and Hun Film and Photography Website
  */
 
+// Import analytics tracking functions
+import { trackGalleryInteraction } from './analytics.js';
+
 class FamilyGallery {
     constructor() {
         // Gallery configuration - using family gallery images
+        // Gallery images with SEO-optimized alt text for Hickory, NC family photography
         this.galleryImages = [
-            { src: 'images/family-gallery/04dba80f.jpg', alt: 'Beautiful family portrait' },
-            { src: 'images/family-gallery/472e37d6.jpg', alt: 'Family joy and laughter' },
-            { src: 'images/family-gallery/74b011e7.jpg', alt: 'Children playing together' },
-            { src: 'images/family-gallery/888d0dea.jpg', alt: 'Family love and connection' },
-            { src: 'images/family-gallery/9435438b.jpg', alt: 'Candid family moment' },
-            { src: 'images/family-gallery/a918a03c.jpg', alt: 'Family celebration' },
-            { src: 'images/family-gallery/c6b65462.jpg', alt: 'Sweet family embrace' },
-            { src: 'images/family-gallery/c8e26c38.jpg', alt: 'Family adventure together' }
+            { src: 'images/family-gallery/04dba80f.webp', alt: 'Hickory NC family photographer - Beautiful family portrait outdoors' },
+            { src: 'images/family-gallery/472e37d6.webp', alt: 'Family photography Hickory - Joy and laughter moment' },
+            { src: 'images/family-gallery/74b011e7.webp', alt: 'Children playing together - Family session North Carolina' },
+            { src: 'images/family-gallery/888d0dea.webp', alt: 'Family love and connection - Hickory NC photographer' },
+            { src: 'images/family-gallery/9435438b.webp', alt: 'Candid family moment - Professional family photography' },
+            { src: 'images/family-gallery/a918a03c.webp', alt: 'Family celebration photography - Hickory North Carolina' },
+            { src: 'images/family-gallery/c6b65462.webp', alt: 'Sweet family embrace - NC family photo session' },
+            { src: 'images/family-gallery/c8e26c38.webp', alt: 'Family adventure together - Hickory family photographer' }
         ];
         
         // Gallery state
@@ -153,6 +157,9 @@ class FamilyGallery {
         // Load more button
         if (this.loadMoreBtn) {
             this.loadMoreBtn.addEventListener('click', () => {
+                // Track load more action
+                trackGalleryInteraction('family', 'load_more', this.loadedImagesCount);
+                
                 this.loadImages();
                 // Observe newly added items
                 setTimeout(this.observeNewItems, 100);
@@ -214,6 +221,9 @@ class FamilyGallery {
             // Update counter
             this.updateCounter();
             
+            // Track lightbox open
+            trackGalleryInteraction('family', 'open', index);
+            
             // Show lightbox
             this.lightboxOverlay.classList.add('active');
             document.body.style.overflow = 'hidden'; // Prevent background scrolling
@@ -228,6 +238,9 @@ class FamilyGallery {
      */
     closeLightbox() {
         if (this.lightboxOverlay) {
+            // Track lightbox close
+            trackGalleryInteraction('family', 'close', this.currentImageIndex);
+            
             this.lightboxOverlay.classList.remove('active');
             document.body.style.overflow = ''; // Restore scrolling
         }
@@ -238,6 +251,10 @@ class FamilyGallery {
      */
     previousImage() {
         this.currentImageIndex = (this.currentImageIndex - 1 + this.galleryImages.length) % this.galleryImages.length;
+        
+        // Track navigation
+        trackGalleryInteraction('family', 'previous', this.currentImageIndex);
+        
         this.updateLightboxImage();
     }
     
@@ -246,6 +263,10 @@ class FamilyGallery {
      */
     nextImage() {
         this.currentImageIndex = (this.currentImageIndex + 1) % this.galleryImages.length;
+        
+        // Track navigation
+        trackGalleryInteraction('family', 'next', this.currentImageIndex);
+        
         this.updateLightboxImage();
     }
     

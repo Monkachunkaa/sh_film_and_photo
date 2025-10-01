@@ -3,6 +3,9 @@
  * Sanford and Hun Film and Photography Website
  */
 
+// Import analytics tracking functions
+import { trackNavigation, trackEvent } from './analytics.js';
+
 document.addEventListener('DOMContentLoaded', function() {
     // Get navigation elements
     const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
@@ -17,6 +20,11 @@ document.addEventListener('DOMContentLoaded', function() {
             // Toggle active class on navigation
             navigation.classList.toggle('active');
             const isActive = mobileMenuToggle.classList.toggle('active');
+            
+            // Track mobile menu toggle
+            trackEvent('mobile_menu_toggle', {
+                action: isActive ? 'open' : 'close'
+            });
             
             // Toggle body scroll lock
             body.classList.toggle('menu-open');
@@ -43,6 +51,11 @@ document.addEventListener('DOMContentLoaded', function() {
     // Close mobile menu when clicking on navigation links
     navLinks.forEach(link => {
         link.addEventListener('click', function() {
+            // Track navigation click
+            const destination = this.getAttribute('href') || this.textContent.trim();
+            const currentPage = window.location.pathname;
+            trackNavigation(destination, currentPage);
+            
             // Close mobile menu
             navigation.classList.remove('active');
             mobileMenuToggle.classList.remove('active');

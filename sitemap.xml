@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Sitemap for Sanford and Hun Film and Photography
+  This file helps search engines discover and index all pages on the website
+  Generated: 2025
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  
+  <!-- Homepage -->
+  <url>
+    <loc>https://www.sanfordandhun.com/</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <!-- Weddings Page -->
+  <url>
+    <loc>https://www.sanfordandhun.com/weddings.html</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://www.sanfordandhun.com/images/wedding_slideshow/wedding_slideshow1.jpg</image:loc>
+      <image:caption>Wedding Photography by Sanford and Hun in Hickory, NC</image:caption>
+    </image:image>
+  </url>
+  
+  <!-- Family Sessions Page -->
+  <url>
+    <loc>https://www.sanfordandhun.com/family.html</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://www.sanfordandhun.com/images/family_slideshow/slideshow04-8e95e20b.jpg</image:loc>
+      <image:caption>Family Photography by Sanford and Hun in Hickory, NC</image:caption>
+    </image:image>
+  </url>
+  
+  <!-- Video Portfolio Page -->
+  <url>
+    <loc>https://www.sanfordandhun.com/video-portfolio.html</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Contact Page -->
+  <url>
+    <loc>https://www.sanfordandhun.com/contact.html</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+</urlset>

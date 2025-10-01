@@ -1,0 +1,54 @@
+# robots.txt for Sanford and Hun Film and Photography
+# This file tells search engines which pages they can and cannot crawl
+
+# Allow all search engines to access the site
+User-agent: *
+Allow: /
+
+# Block access to sensitive directories
+Disallow: /netlify/
+Disallow: /.netlify/
+Disallow: /node_modules/
+Disallow: /.git/
+
+# Block access to configuration and system files
+Disallow: /*.json
+Disallow: /*.toml
+Disallow: /.env
+
+# Allow CSS, JavaScript, and images for better indexing
+Allow: /styles/*.css
+Allow: /js/*.js
+Allow: /images/
+
+# Sitemap location (helps search engines find all pages)
+Sitemap: https://www.sanfordandhun.com/sitemap.xml
+
+# Crawl delay (optional - prevents overwhelming the server)
+# Crawl-delay: 1
+
+# Specific rules for common search engine bots
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /images/
+
+User-agent: Bingbot
+Allow: /
+
+# Block AI scrapers (optional - protects your content from being used in AI training)
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ChatGPT-User
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: Claude-Web
+Disallow: /

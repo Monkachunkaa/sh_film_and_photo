@@ -4,21 +4,24 @@
  * Sanford and Hun Film and Photography Website
  */
 
+// Import analytics tracking functions
+import { trackGalleryInteraction } from './analytics.js';
+
 class WeddingGallery {
     constructor() {
         // Gallery configuration
         this.galleryImages = [
-            { src: 'images/wedding_gallery/1ba99492.jpg', alt: 'Beautiful wedding ceremony moment' },
-            { src: 'images/wedding_gallery/3c21343c.jpg', alt: 'Wedding couple portrait' },
-            { src: 'images/wedding_gallery/532346ec.jpg', alt: 'Wedding celebration' },
-            { src: 'images/wedding_gallery/5877a184.jpg', alt: 'Intimate wedding moment' },
-            { src: 'images/wedding_gallery/5cc3eae4.jpg', alt: 'Wedding reception joy' },
-            { src: 'images/wedding_gallery/7afb1055.jpg', alt: 'Wedding details and decor' },
-            { src: 'images/wedding_gallery/86d996cb.jpg', alt: 'Wedding party celebration' },
-            { src: 'images/wedding_gallery/8c33639f.jpg', alt: 'Wedding romantic portrait' },
-            { src: 'images/wedding_gallery/8fa2cf46.jpg', alt: 'Wedding ceremony details' },
-            { src: 'images/wedding_gallery/e33e017c.jpg', alt: 'Wedding candid moment' },
-            { src: 'images/wedding_gallery/e395958a.jpg', alt: 'Wedding love and laughter' }
+            { src: 'images/wedding_gallery/1ba99492.webp', alt: 'Beautiful wedding ceremony moment' },
+            { src: 'images/wedding_gallery/3c21343c.webp', alt: 'Wedding couple portrait' },
+            { src: 'images/wedding_gallery/532346ec.webp', alt: 'Wedding celebration' },
+            { src: 'images/wedding_gallery/5877a184.webp', alt: 'Intimate wedding moment' },
+            { src: 'images/wedding_gallery/5cc3eae4.webp', alt: 'Wedding reception joy' },
+            { src: 'images/wedding_gallery/7afb1055.webp', alt: 'Wedding details and decor' },
+            { src: 'images/wedding_gallery/86d996cb.webp', alt: 'Wedding party celebration' },
+            { src: 'images/wedding_gallery/8c33639f.webp', alt: 'Wedding romantic portrait' },
+            { src: 'images/wedding_gallery/8fa2cf46.webp', alt: 'Wedding ceremony details' },
+            { src: 'images/wedding_gallery/e33e017c.webp', alt: 'Wedding candid moment' },
+            { src: 'images/wedding_gallery/e395958a.webp', alt: 'Wedding love and laughter' }
         ];
         
         // Gallery state
@@ -156,6 +159,9 @@ class WeddingGallery {
         // Load more button
         if (this.loadMoreBtn) {
             this.loadMoreBtn.addEventListener('click', () => {
+                // Track load more action
+                trackGalleryInteraction('weddings', 'load_more', this.loadedImagesCount);
+                
                 this.loadImages();
                 // Observe newly added items
                 setTimeout(this.observeNewItems, 100);
@@ -217,6 +223,9 @@ class WeddingGallery {
             // Update counter
             this.updateCounter();
             
+            // Track lightbox open
+            trackGalleryInteraction('weddings', 'open', index);
+            
             // Show lightbox
             this.lightboxOverlay.classList.add('active');
             document.body.style.overflow = 'hidden'; // Prevent background scrolling
@@ -231,6 +240,9 @@ class WeddingGallery {
      */
     closeLightbox() {
         if (this.lightboxOverlay) {
+            // Track lightbox close
+            trackGalleryInteraction('weddings', 'close', this.currentImageIndex);
+            
             this.lightboxOverlay.classList.remove('active');
             document.body.style.overflow = ''; // Restore scrolling
         }
@@ -241,6 +253,10 @@ class WeddingGallery {
      */
     previousImage() {
         this.currentImageIndex = (this.currentImageIndex - 1 + this.galleryImages.length) % this.galleryImages.length;
+        
+        // Track navigation
+        trackGalleryInteraction('weddings', 'previous', this.currentImageIndex);
+        
         this.updateLightboxImage();
     }
     
@@ -249,6 +265,10 @@ class WeddingGallery {
      */
     nextImage() {
         this.currentImageIndex = (this.currentImageIndex + 1) % this.galleryImages.length;
+        
+        // Track navigation
+        trackGalleryInteraction('weddings', 'next', this.currentImageIndex);
+        
         this.updateLightboxImage();
     }
     

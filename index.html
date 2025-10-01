@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Google tag (gtag.js) - Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-K9016HQ6TY"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-K9016HQ6TY');
+    </script>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sanford and Hun Film and Photography</title>
@@ -10,14 +19,127 @@
     <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
     
     <!-- Meta tags for SEO -->
-    <meta name="description" content="Sanford and Hun Film and Photography - Professional wedding photography and videography services. Capturing your story, our lens - Memories that last a lifetime.">
-    <meta name="keywords" content="wedding photography, videography, family sessions, Ryan and Tera, film photography">
+    <meta name="description" content="Professional wedding photography and videography in Hickory, NC. Capturing authentic moments for weddings and family sessions. Ryan and Tera - Your story, beautifully preserved.">
+    <meta name="keywords" content="wedding photography Hickory NC, wedding videography Hickory, family photography Hickory, wedding photographer North Carolina, family photo sessions, Ryan and Tera photography">
+    <meta name="geo.region" content="US-NC">
+    <meta name="geo.placename" content="Hickory">
+    <meta name="geo.position" content="35.7344;-81.3412">
+    <meta name="ICBM" content="35.7344, -81.3412">
     
     <!-- Social media meta tags -->
-    <meta property="og:title" content="Sanford and Hun Film and Photography">
-    <meta property="og:description" content="Your story, our lens - Memories that last a lifetime">
+    <meta property="og:title" content="Sanford and Hun Film and Photography - Hickory, NC">
+    <meta property="og:description" content="Professional wedding photography and videography in Hickory, NC. Your story, our lens - Memories that last a lifetime.">
     <meta property="og:image" content="images/share.jpg">
     <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_US">
+    
+    <!-- Canonical URL to prevent duplicate content issues -->
+    <link rel="canonical" href="https://www.sanfordandhun.com/">
+    
+    <!-- Structured Data (Schema.org) for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Sanford and Hun Film and Photography",
+      "image": "https://www.sanfordandhun.com/images/logo.png",
+      "description": "Professional wedding photography and videography services in Hickory, NC. Specializing in authentic wedding photography, family photo sessions, and wedding videography.",
+      "@id": "https://www.sanfordandhun.com",
+      "url": "https://www.sanfordandhun.com",
+      "telephone": "+18282443277",
+      "email": "shfilmandphoto@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Hickory",
+        "addressRegion": "NC",
+        "postalCode": "28601",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "35.7344",
+        "longitude": "-81.3412"
+      },
+      "areaServed": {
+        "@type": "City",
+        "name": "Hickory",
+        "@id": "https://en.wikipedia.org/wiki/Hickory,_North_Carolina"
+      },
+      "priceRange": "$-$$",
+      "openingHours": "Mo-Su",
+      "sameAs": [
+        "https://www.instagram.com/shfilmandphoto/",
+        "https://www.facebook.com/sanfordandhun",
+        "https://www.youtube.com/@sanfordhunfilmandphoto/videos"
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Photography Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Wedding Photography",
+              "description": "Professional wedding photography services capturing authentic moments throughout your special day.",
+              "provider": {
+                "@type": "ProfessionalService",
+                "name": "Sanford and Hun Film and Photography"
+              }
+            },
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "price": "2800",
+              "priceCurrency": "USD",
+              "description": "Wedding packages starting at $2800"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Family Photo Sessions",
+              "description": "Family portrait photography capturing authentic moments, giggles, cuddles, and real family connections.",
+              "provider": {
+                "@type": "ProfessionalService",
+                "name": "Sanford and Hun Film and Photography"
+              }
+            },
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "price": "175",
+              "priceCurrency": "USD",
+              "description": "Family packages starting at $175"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Wedding Videography",
+              "description": "Professional wedding videography services preserving your love story in cinematic film.",
+              "provider": {
+                "@type": "ProfessionalService",
+                "name": "Sanford and Hun Film and Photography"
+              }
+            }
+          }
+        ]
+      },
+      "founder": [
+        {
+          "@type": "Person",
+          "name": "Ryan Sanford",
+          "jobTitle": "Photographer & Videographer"
+        },
+        {
+          "@type": "Person",
+          "name": "Tera Hun",
+          "jobTitle": "Photographer & Videographer"
+        }
+      ]
+    }
+    </script>
     
     <!-- Google Fonts for elegant typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -42,7 +164,10 @@
         <div class="container">
             <!-- Logo -->
             <div class="logo">
-                <img src="images/logo.png" alt="Sanford and Hun Film and Photography" class="logo-image">
+                <picture>
+                    <source srcset="images/logo.webp" type="image/webp">
+                    <img src="images/logo.png" alt="Sanford and Hun Film and Photography" class="logo-image">
+                </picture>
             </div>
             
             <!-- Navigation menu -->
@@ -84,15 +209,24 @@
         <!-- Hero section with rotating slideshow -->
         <section class="hero-section">
             <div class="hero-slideshow">
-                <!-- Hero images will be dynamically loaded by JavaScript -->
+                <!-- Hero images with WebP support and fallbacks -->
                 <div class="hero-slide active">
-                    <img src="images/hero_slideshow/1st_hero.jpg" alt="Beautiful wedding moment captured by Sanford and Hun" class="hero-image">
+                    <picture>
+                        <source srcset="images/hero_slideshow/1st_hero.webp" type="image/webp">
+                        <img src="images/hero_slideshow/1st_hero.jpg" alt="Hickory NC wedding photography - Bride and groom romantic moment by Sanford and Hun" class="hero-image">
+                    </picture>
                 </div>
                 <div class="hero-slide">
-                    <img src="images/hero_slideshow/2nd_hero.jpg" alt="Intimate family portrait by Sanford and Hun" class="hero-image">
+                    <picture>
+                        <source srcset="images/hero_slideshow/2nd_hero.webp" type="image/webp">
+                        <img src="images/hero_slideshow/2nd_hero.jpg" alt="Family portrait photography in Hickory NC - Candid moment by Sanford and Hun" class="hero-image">
+                    </picture>
                 </div>
                 <div class="hero-slide">
-                    <img src="images/hero_slideshow/3rd_hero.jpg" alt="Stunning couple photography by Sanford and Hun" class="hero-image">
+                    <picture>
+                        <source srcset="images/hero_slideshow/3rd_hero.webp" type="image/webp">
+                        <img src="images/hero_slideshow/3rd_hero.jpg" alt="Engagement photography Hickory NC - Couple portrait by Sanford and Hun" class="hero-image">
+                    </picture>
                 </div>
             </div>
             
@@ -133,9 +267,12 @@
                         </div>
                     </div>
                     
-                    <!-- About image -->
+                    <!-- About image with WebP support -->
                     <div class="about-image">
-                        <img src="images/about_us.jpeg" alt="Ryan and Tera - Husband and wife photography team" class="about-photo">
+                        <picture>
+                        <source srcset="images/about_us.webp" type="image/webp">
+                        <img src="images/about_us.jpeg" alt="Ryan and Tera Sanford and Hun - Professional wedding photographers and videographers in Hickory North Carolina" class="about-photo">
+                        </picture>
                     </div>
                 </div>
                 

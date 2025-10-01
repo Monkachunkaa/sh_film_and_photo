@@ -3,6 +3,9 @@
  * Sanford and Hun Film and Photography Website
  */
 
+// Import analytics tracking functions
+import { trackSlideshowInteraction } from './analytics.js';
+
 document.addEventListener('DOMContentLoaded', function() {
     // Hero slideshow configuration
     const SLIDE_DURATION = 8000; // 8 seconds
@@ -47,6 +50,10 @@ document.addEventListener('DOMContentLoaded', function() {
     function nextSlide() {
         const nextIndex = (currentSlideIndex + 1) % heroSlides.length;
         console.log(`Moving from slide ${currentSlideIndex} to slide ${nextIndex}`); // Debug log
+        
+        // Track slideshow auto-advance
+        trackSlideshowInteraction('hero', 'auto_advance');
+        
         showSlide(nextIndex);
     }
     
