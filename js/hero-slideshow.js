@@ -115,5 +115,16 @@ document.addEventListener('DOMContentLoaded', function() {
         getTotalSlides: () => heroSlides.length
     };
     
+    // Track hero CTA button clicks
+    const heroCTAButton = document.querySelector('.hero-cta .btn-ghost');
+    if (heroCTAButton && window.Analytics) {
+        heroCTAButton.addEventListener('click', function() {
+            window.Analytics.trackEvent('hero_cta_click', {
+                button_text: this.textContent.trim(),
+                destination: this.getAttribute('href')
+            });
+        });
+    }
+    
     console.log('Hero slideshow script loaded successfully');
 });

@@ -209,6 +209,29 @@
 }
 
 /* ========================================
+   CONTACT IMAGE
+   ======================================== */
+
+.contact-image-container {
+    margin-top: var(--spacing-4xl);
+    width: 100%;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    display: none; /* Hidden by default on desktop */
+}
+
+.contact-photo {
+    width: 100%;
+    height: auto;
+    display: block;
+    /* Create gradient mask for bottom fade */
+    -webkit-mask-image: linear-gradient(to bottom, black 75%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 75%, transparent 100%);
+}
+
+/* ========================================
    RESPONSIVE DESIGN
    ======================================== */
 
@@ -288,6 +311,12 @@
     .error-text {
         font-size: var(--font-size-base);
     }
+    
+    /* Contact image responsive - Show on mobile only */
+    .contact-image-container {
+        display: block; /* Show on mobile */
+        margin-top: var(--spacing-3xl);
+    }
 }
 
 @media (max-width: 480px) {
@@ -339,6 +368,11 @@
     .error-text {
         font-size: var(--font-size-sm);
         line-height: 1.6;
+    }
+    
+    /* Contact image responsive */
+    .contact-image-container {
+        margin-top: var(--spacing-2xl);
     }
 }
 

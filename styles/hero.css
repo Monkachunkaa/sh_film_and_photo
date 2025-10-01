@@ -103,6 +103,37 @@
     opacity: 0.95;
 }
 
+/* Hero CTA button container */
+.hero-cta {
+    margin-top: var(--spacing-lg);
+}
+
+/* Ghost button style for hero */
+.btn-ghost {
+    background-color: transparent;
+    color: var(--color-secondary);
+    border: 2px solid var(--color-secondary);
+    border-radius: 0;
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: var(--font-size-base);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    padding: var(--spacing-md) var(--spacing-2xl);
+    transition: all var(--transition-normal);
+    display: inline-block;
+    text-decoration: none;
+    text-shadow: none;
+}
+
+.btn-ghost:hover {
+    background-color: var(--color-secondary);
+    color: var(--color-primary);
+    opacity: 1;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3);
+}
+
 /* Fade in up animation for hero content */
 @keyframes fadeInUp {
     from {
@@ -133,17 +164,26 @@
 
 /* Responsive styles for hero section */
 @media (max-width: 768px) {
+    /* Adjust image positioning for mobile to show more of the photo */
+    .hero-image {
+        object-position: center 40%; /* Show upper-center area of photos on mobile */
+    }
+    
     .hero-overlay {
         padding: var(--spacing-2xl) var(--spacing-lg);
         /* Position text in bottom 1/3rd of viewport */
         align-items: flex-end;
         justify-content: center;
         text-align: center;
-        padding-bottom: calc(100vh / 4.5); /* Moved up slightly from bottom third */
+        padding-bottom: calc(100vh / 5.5); /* Moved closer to bottom */
     }
     
     .hero-content {
         max-width: 100%;
+    }
+    
+    .hero-tagline {
+        gap: var(--spacing-md); /* Increase gap between main and sub text */
     }
     
     .hero-main-text {
@@ -155,12 +195,29 @@
         font-size: 1.5rem; /* Slightly bigger - was var(--font-size-xl) */
         line-height: 1.4;
     }
+    
+    /* Make CTA button full width matching main text width on mobile */
+    .hero-cta {
+        width: 100%;
+        margin-top: var(--spacing-2xl); /* Increased space between text and button */
+    }
+    
+    .btn-ghost {
+        width: 100%;
+        padding: var(--spacing-md) var(--spacing-lg);
+        font-size: var(--font-size-sm);
+        letter-spacing: 1.2px;
+    }
 }
 
 @media (max-width: 480px) {
     .hero-overlay {
         padding: var(--spacing-xl) var(--spacing-md);
-        padding-bottom: calc(100vh / 4.5); /* Maintain positioning */
+        padding-bottom: calc(100vh / 5.5); /* Maintain closer to bottom positioning */
+    }
+    
+    .hero-tagline {
+        gap: var(--spacing-sm); /* Slightly less gap on smaller screens */
     }
     
     .hero-main-text {
@@ -171,6 +228,10 @@
     .hero-sub-text {
         font-size: 1.35rem; /* Slightly bigger - was var(--font-size-lg) */
         letter-spacing: 0.3px;
+    }
+    
+    .hero-cta {
+        margin-top: var(--spacing-xl); /* Slightly less space on small screens */
     }
 }
 
