@@ -1,14 +1,188 @@
-# Environment variables
+# ========================================
+# SENSITIVE INFORMATION - NEVER COMMIT
+# ========================================
+
+# Environment variables (contains AWS keys and sensitive config)
 .env
 .env.local
+.env.development.local
+.env.test.local
+.env.production.local
 .env.*.local
 
-# Node modules
+# AWS credentials
+.aws/
+*.pem
+*.key
+*.crt
+credentials
+
+# API Keys and Secrets
+secrets/
+secrets.json
+config/secrets.json
+*.secret
+*.secrets
+
+# ========================================
+# NODE.JS
+# ========================================
+
+# Dependencies
 node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
 
-# Netlify
+# ========================================
+# NETLIFY
+# ========================================
+
+# Netlify build output
 .netlify/
+.netlify-state.json
 
-# OS files
+# Netlify functions (local only)
+functions-local/
+
+# ========================================
+# OPERATING SYSTEM FILES
+# ========================================
+
+# macOS
 .DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Windows
 Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+*~
+.directory
+.Trash-*
+
+# ========================================
+# EDITORS AND IDEs
+# ========================================
+
+# Visual Studio Code
+.vscode/
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# JetBrains IDEs (WebStorm, PhpStorm, etc.)
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+*.swp
+*.swo
+*~
+
+# Emacs
+*~
+\#*\#
+.\#*
+
+# ========================================
+# BUILD AND TEMP FILES
+# ========================================
+
+# Build outputs
+dist/
+build/
+out/
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.log
+
+# Cache
+.cache/
+*.cache
+
+# ========================================
+# BACKUP FILES
+# ========================================
+
+# Backup files
+*.backup
+*.bak
+*.old
+*.orig
+
+# ========================================
+# DATABASE AND DATA FILES
+# ========================================
+
+# Database files
+*.sqlite
+*.sqlite3
+*.db
+*.mdb
+
+# Data dumps
+*.sql
+*.dump
+
+# ========================================
+# TESTING AND COVERAGE
+# ========================================
+
+# Test coverage
+coverage/
+.nyc_output/
+*.lcov
+
+# ========================================
+# MISCELLANEOUS
+# ========================================
+
+# Lock files (keep package-lock.json out if team uses different package managers)
+# Uncomment the one you want to ignore:
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
+
+# Debug files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Output of 'npm pack'
+*.tgz
+
+# dotenv environment variable files
+.env.backup
