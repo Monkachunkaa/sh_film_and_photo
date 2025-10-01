@@ -1,0 +1,25 @@
+{
+  "name": "sh-film-and-photo",
+  "version": "1.0.0",
+  "description": "Website for Sanford and Hun Film and Photography",
+  "main": "index.html",
+  "scripts": {
+    "dev": "netlify dev",
+    "build": "echo 'No build step required'",
+    "test": "echo 'No tests configured'"
+  },
+  "keywords": [
+    "photography",
+    "film",
+    "wedding",
+    "portfolio"
+  ],
+  "author": "Honeybee Web Design",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.1691.0"
+  },
+  "devDependencies": {
+    "netlify-cli": "^17.0.0"
+  }
+}

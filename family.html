@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Family Photos - Sanford and Hun Film and Photography</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    
+    <!-- Meta tags for SEO -->
+    <meta name="description" content="Family photography by Sanford and Hun. Capturing your family's real moments - the giggles, cuddles, and even the occasional chaos. Packages start at $175.">
+    <meta name="keywords" content="family photography, family portraits, children photography, family sessions, Ryan and Tera">
+    
+    <!-- Social media meta tags -->
+    <meta property="og:title" content="Family Photos - Sanford and Hun Film and Photography">
+    <meta property="og:description" content="Capturing your family's real moments - the giggles, cuddles, and even the occasional chaos. Packages start at $175.">
+    <meta property="og:image" content="images/share.jpg">
+    <meta property="og:type" content="website">
+    
+    <!-- Google Fonts for elegant typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sacramento&family=Playfair+Display:wght@400;500;600;700&family=Newsreader:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Main stylesheet -->
+    <link rel="stylesheet" href="styles/main.css">
+    
+    <!-- Navigation stylesheet -->
+    <link rel="stylesheet" href="styles/navigation.css">
+    
+    <!-- Family page stylesheet -->
+    <link rel="stylesheet" href="styles/family.css">
+</head>
+<body>
+    <!-- Header with logo and navigation -->
+    <header class="header">
+        <div class="container">
+            <!-- Logo -->
+            <div class="logo">
+                <img src="images/logo.png" alt="Sanford and Hun Film and Photography" class="logo-image">
+            </div>
+            
+            <!-- Navigation menu -->
+            <nav class="navigation">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="weddings.html" class="nav-link">Weddings</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="family.html" class="nav-link active">Family Sessions</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="video-portfolio.html" class="nav-link">Video Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-btn">Get In Touch</a>
+                    </li>
+                </ul>
+                
+                <!-- Mobile menu toggle button -->
+                <div class="mobile-menu-toggle hamburger" aria-label="Toggle navigation menu">
+                    <div class="top line"></div>
+                    <div class="middle line"></div>
+                    <div class="bottom line"></div>
+                    <div class="draw_top border"></div>
+                    <div class="draw_left border"></div>
+                    <div class="draw_bottom border"></div>
+                    <div class="draw_right border"></div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main content -->
+    <main class="main-content">
+        <!-- Family hero section -->
+        <section class="family-hero">
+            <div class="container">
+                <div class="family-hero-content">
+                    <!-- Left side - Content -->
+                    <div class="family-content">
+                        <h1 class="family-title">Family Photos</h1>
+                        <div class="family-description">
+                            <p>We're here to capture your family's real moments - the giggles, the cuddles, and even the occasional chaos. These aren't just photos - they're time capsules you'll look back on with a full heart for years to come.</p>
+                        </div>
+                        <div class="family-pricing">
+                            <p class="pricing-text"><strong>Packages start at $175</strong></p>
+                        </div>
+                        <div class="family-cta">
+                            <a href="contact.html" class="btn btn-outline">Get in touch</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Right side - Slideshow -->
+                    <div class="family-slideshow">
+                        <div class="family-slides">
+                            <div class="family-slide active">
+                                <img src="images/family_slideshow/slideshow04-8e95e20b.jpg" alt="Family love and connection" class="family-image">
+                            </div>
+                            <div class="family-slide">
+                                <img src="images/family_slideshow/slideshow04-00606de9.jpg" alt="Beautiful family moment" class="family-image">
+                            </div>
+                            <div class="family-slide">
+                                <img src="images/family_slideshow/slideshow04-5202a9e8.jpg" alt="Family joy and laughter" class="family-image">
+                            </div>
+                            <div class="family-slide">
+                                <img src="images/family_slideshow/slideshow04-6d9daea6.jpg" alt="Intimate family portrait" class="family-image">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Family Gallery Section -->
+        <section class="family-gallery-section">
+            <div class="container">
+                <!-- Section header -->
+                <div class="gallery-header">
+                    <h2 class="gallery-title">Our Family Gallery</h2>
+                    <p class="gallery-subtitle">Cherished moments that tell your family's story</p>
+                </div>
+                
+                <!-- Modern gallery grid with lightbox -->
+                <div class="modern-gallery" id="familyGallery">
+                    <!-- Gallery items will be dynamically loaded -->
+                </div>
+                
+                <!-- Load more button -->
+                <div class="gallery-actions">
+                    <button class="btn btn-outline load-more-btn" id="loadMoreBtn">View More</button>
+                </div>
+                
+                <!-- Gallery CTA -->
+                <div class="gallery-cta">
+                    <a href="contact.html" class="btn btn-outline">Book Your Session</a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Lightbox modal -->
+        <div class="lightbox-overlay" id="lightboxOverlay">
+            <div class="lightbox-container">
+                <button class="lightbox-close" id="lightboxClose" aria-label="Close lightbox">&times;</button>
+                <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Previous image">&#8249;</button>
+                <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Next image">&#8250;</button>
+                <div class="lightbox-content">
+                    <img class="lightbox-image" id="lightboxImage" alt="Family photography">
+                    <div class="lightbox-counter" id="lightboxCounter"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-contact">
+                    <a href="mailto:shfilmandphoto@gmail.com" class="footer-link footer-email">shfilmandphoto@gmail.com</a>
+                    <a href="tel:+18282443277" class="footer-link footer-phone">(828) 244-3277</a>
+                </div>
+                <p class="footer-text">&copy; <span id="copyright-year"></span> Sanford and Hun Film and Photography. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript files -->
+    <script src="js/global.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/family-slideshow.js"></script>
+    <script src="js/family-gallery.js"></script>
+</body>
+</html>

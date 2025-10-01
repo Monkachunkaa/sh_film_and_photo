@@ -1,0 +1,306 @@
+/* 
+ * Video Portfolio Page CSS - Compact layout to match design
+ * Sanford and Hun Film and Photography Website
+ */
+
+/* Video Portfolio hero section */
+.video-hero {
+    padding: calc(var(--header-height) + var(--spacing-2xl)) 0 var(--spacing-xl) 0;
+    background-color: var(--color-secondary);
+    text-align: center;
+}
+
+.video-hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.video-title {
+    font-family: var(--font-script);
+    font-size: var(--font-size-5xl);
+    font-weight: 400;
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-md);
+    letter-spacing: -0.5px;
+}
+
+.video-subtitle {
+    font-family: var(--font-body);
+    font-size: var(--font-size-lg);
+    color: var(--color-gray-dark);
+    margin-bottom: 0;
+    line-height: 1.6;
+}
+
+/* ========================================
+   FEATURED VIDEO SECTION - COMPACT
+   ======================================== */
+
+.featured-video-section {
+    padding: var(--spacing-xl) 0;
+    background-color: var(--color-secondary);
+}
+
+.video-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    background-color: #000;
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 8px;
+}
+
+/* ========================================
+   BOTTOM LINKS SECTION - COMPACT LAYOUT
+   ======================================== */
+
+.bottom-links-section {
+    padding: var(--spacing-xl) 0 var(--spacing-2xl) 0;
+    background-color: var(--color-secondary);
+}
+
+.links-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.social-section,
+.youtube-section {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.links-title {
+    font-family: var(--font-body);
+    font-size: var(--font-size-lg);
+    font-weight: 400;
+    color: var(--color-primary);
+    margin: 0;
+}
+
+/* Social Icons */
+.social-icons {
+    display: flex;
+    gap: var(--spacing-md);
+}
+
+.social-icon-link {
+    display: inline-block;
+    color: var(--color-primary);
+    transition: all 0.2s ease;
+}
+
+.social-icon-link:hover {
+    color: var(--color-gray-dark);
+    transform: scale(1.1);
+    opacity: 1;
+}
+
+.social-icon {
+    width: 32px;
+    height: 32px;
+}
+
+/* YouTube Icon */
+.youtube-icon-link {
+    display: inline-block;
+    color: var(--color-primary);
+    transition: all 0.2s ease;
+}
+
+.youtube-icon-link:hover {
+    color: var(--color-gray-dark);
+    transform: scale(1.1);
+    opacity: 1;
+}
+
+.youtube-icon {
+    width: 32px;
+    height: 32px;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+/* Tablet styles */
+@media (max-width: 1024px) {
+    .video-title {
+        font-size: var(--font-size-4xl);
+    }
+    
+    .video-subtitle {
+        font-size: var(--font-size-base);
+    }
+    
+    .video-container {
+        max-width: 90%;
+    }
+    
+    .links-container {
+        max-width: 90%;
+    }
+    
+    .links-title {
+        font-size: var(--font-size-base);
+    }
+    
+    .social-icon,
+    .youtube-icon {
+        width: 28px;
+        height: 28px;
+    }
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    .video-hero {
+        padding: calc(var(--header-height) + var(--spacing-xl)) 0 var(--spacing-lg) 0;
+    }
+    
+    .video-title {
+        font-size: var(--font-size-3xl);
+        margin-bottom: var(--spacing-sm);
+    }
+    
+    .video-subtitle {
+        font-size: var(--font-size-sm);
+    }
+    
+    .featured-video-section {
+        padding: var(--spacing-lg) 0;
+    }
+    
+    .bottom-links-section {
+        padding: var(--spacing-lg) 0 var(--spacing-xl) 0;
+    }
+    
+    .links-container {
+        flex-direction: column;
+        gap: var(--spacing-lg);
+        text-align: center;
+    }
+    
+    .social-section,
+    .youtube-section {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+    
+    .links-title {
+        font-size: var(--font-size-sm);
+    }
+    
+    .social-icon,
+    .youtube-icon {
+        width: 24px;
+        height: 24px;
+    }
+    
+    .video-wrapper {
+        border-radius: 4px;
+    }
+    
+    .video-wrapper iframe {
+        border-radius: 4px;
+    }
+}
+
+@media (max-width: 480px) {
+    .video-hero {
+        padding: calc(var(--header-height) + var(--spacing-lg)) 0 var(--spacing-sm) 0;
+    }
+    
+    .video-title {
+        font-size: var(--font-size-2xl);
+    }
+    
+    .video-subtitle {
+        font-size: var(--font-size-xs);
+    }
+    
+    .featured-video-section,
+    .bottom-links-section {
+        padding: var(--spacing-md) 0;
+    }
+    
+    .links-container {
+        gap: var(--spacing-md);
+    }
+    
+    .social-section,
+    .youtube-section {
+        gap: var(--spacing-xs);
+    }
+    
+    .links-title {
+        font-size: var(--font-size-xs);
+    }
+    
+    .social-icon,
+    .youtube-icon {
+        width: 20px;
+        height: 20px;
+    }
+    
+    .social-icons {
+        gap: var(--spacing-sm);
+    }
+}
+
+/* Accessibility - Prefers reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .social-icon-link,
+    .youtube-icon-link {
+        transition: none;
+    }
+    
+    .social-icon-link:hover,
+    .youtube-icon-link:hover {
+        transform: none;
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .video-wrapper {
+        border: 2px solid var(--color-primary);
+    }
+}
+
+/* Print styles */
+@media print {
+    .video-wrapper,
+    .bottom-links-section {
+        display: none;
+    }
+    
+    .video-hero::after {
+        content: "Visit our website to view our video portfolio and social media links.";
+        display: block;
+        margin-top: var(--spacing-lg);
+        font-style: italic;
+        color: var(--color-gray-dark);
+    }
+}

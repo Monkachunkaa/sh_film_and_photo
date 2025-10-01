@@ -1,0 +1,359 @@
+/* 
+ * Timeline Section CSS - "What to Expect" timeline for weddings page
+ * Sanford and Hun Film and Photography Website
+ * 
+ * This file contains styles for the vertical timeline that shows
+ * the wedding booking process in a clean, elegant layout
+ */
+
+/* ========================================
+   TIMELINE CONTAINER AND LAYOUT
+   ======================================== */
+
+/* Main timeline wrapper */
+.timeline-section {
+    padding: var(--spacing-4xl) 0;
+    background-color: var(--color-secondary);
+}
+
+/* Timeline container - centers content and sets max width */
+.timeline-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 900px;
+    margin: 0 auto;
+    font-family: inherit;
+    padding: 0 var(--spacing-lg);
+}
+
+/* ========================================
+   TIMELINE HEADER
+   ======================================== */
+
+/* Header section at top of timeline */
+.timeline-header {
+    text-align: center;
+    margin-bottom: var(--spacing-4xl);
+    border-bottom: 1px solid var(--color-gray-medium);
+    padding-bottom: var(--spacing-lg);
+}
+
+/* Main timeline title */
+.timeline-header h2 {
+    font-family: var(--font-heading);
+    font-size: var(--font-size-5xl);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--color-primary);
+    margin-bottom: 0;
+    font-weight: 400;
+}
+
+/* ========================================
+   TIMELINE ROWS AND VERTICAL LINE
+   ======================================== */
+
+/* Individual timeline row - contains left and right content blocks */
+.timeline-row {
+    display: flex;
+    margin-bottom: var(--spacing-4xl);
+    position: relative;
+}
+
+/* Vertical line connecting all timeline items */
+.timeline-row:after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: calc(-1 * var(--spacing-4xl));
+    width: 1px;
+    background-color: var(--color-gray-medium);
+    transform: translateX(-50%);
+}
+
+/* Remove line extension from last item */
+.timeline-row:last-child:after {
+    bottom: 0;
+}
+
+/* ========================================
+   TIMELINE CONTENT BLOCKS
+   ======================================== */
+
+/* Content block - can be on left or right side */
+.timeline-content-block {
+    flex: 1;
+    padding: var(--spacing-xl);
+    position: relative;
+}
+
+/* Right-aligned content (even numbered items) */
+.right-content {
+    text-align: left;
+    padding-left: calc(var(--spacing-2xl) + var(--spacing-md));
+}
+
+/* Left-aligned content (odd numbered items) */
+.left-content {
+    text-align: right;
+    padding-right: calc(var(--spacing-2xl) + var(--spacing-md));
+}
+
+/* Empty cell for alternating layout */
+.empty-cell {
+    flex: 1;
+}
+
+/* ========================================
+   TIMELINE CONTENT ELEMENTS
+   ======================================== */
+
+/* Large italicized number for each step */
+.timeline-number {
+    font-family: var(--font-heading);
+    font-size: var(--font-size-5xl);
+    font-weight: 300;
+    color: var(--color-primary);
+    font-style: italic;
+    margin-bottom: var(--spacing-md);
+    line-height: 1;
+}
+
+/* Title of each timeline step */
+.timeline-title {
+    font-family: var(--font-heading);
+    font-size: var(--font-size-xl);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: var(--spacing-lg);
+    color: var(--color-primary);
+    font-weight: 500;
+}
+
+/* Description text for each step */
+.timeline-content {
+    font-family: var(--font-body);
+    font-size: var(--font-size-lg);
+    color: var(--color-gray-dark);
+    line-height: 1.6;
+}
+
+/* ========================================
+   ANIMATIONS
+   ======================================== */
+
+/* Fade in animation for timeline items */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Apply animation to timeline rows */
+.timeline-row {
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* Stagger animation delays for sequential appearance */
+.timeline-row:nth-child(2) { animation-delay: 0.1s; }
+.timeline-row:nth-child(3) { animation-delay: 0.2s; }
+.timeline-row:nth-child(4) { animation-delay: 0.3s; }
+.timeline-row:nth-child(5) { animation-delay: 0.4s; }
+
+/* ========================================
+   RESPONSIVE DESIGN - TABLET
+   ======================================== */
+
+@media (max-width: 1024px) {
+    /* Adjust header sizing for tablet */
+    .timeline-header h2 {
+        font-size: var(--font-size-4xl);
+        letter-spacing: 2px;
+    }
+    
+    /* Reduce spacing between items */
+    .timeline-row {
+        margin-bottom: var(--spacing-3xl);
+    }
+    
+    .timeline-row:after {
+        bottom: calc(-1 * var(--spacing-3xl));
+    }
+    
+    /* Adjust content sizing */
+    .timeline-number {
+        font-size: var(--font-size-4xl);
+    }
+    
+    .timeline-title {
+        font-size: var(--font-size-lg);
+    }
+    
+    .timeline-content {
+        font-size: var(--font-size-base);
+    }
+}
+
+/* ========================================
+   RESPONSIVE DESIGN - MOBILE
+   ======================================== */
+
+@media (max-width: 768px) {
+    /* Adjust section padding for mobile */
+    .timeline-section {
+        padding: var(--spacing-3xl) 0;
+    }
+    
+    .timeline-container {
+        padding: 0 var(--spacing-md);
+    }
+    
+    /* Stack timeline vertically on mobile */
+    .timeline-row {
+        flex-direction: column;
+        margin-left: var(--spacing-lg);
+        margin-right: 0;
+        margin-bottom: var(--spacing-3xl);
+    }
+    
+    /* Move vertical line to left side on mobile */
+    .timeline-row:after {
+        left: var(--spacing-lg);
+        transform: translateX(0);
+        bottom: calc(-1 * var(--spacing-3xl));
+    }
+    
+    /* Adjust header for mobile */
+    .timeline-header {
+        margin-bottom: var(--spacing-3xl);
+    }
+    
+    .timeline-header h2 {
+        font-size: var(--font-size-3xl);
+        letter-spacing: 1.5px;
+    }
+    
+    /* All content aligned to left with consistent padding on mobile */
+    .timeline-content-block {
+        text-align: left;
+        padding-left: calc(var(--spacing-3xl) + var(--spacing-md));
+        padding-right: var(--spacing-lg);
+    }
+    
+    .left-content,
+    .right-content {
+        text-align: left;
+        padding-left: calc(var(--spacing-3xl) + var(--spacing-md));
+        padding-right: var(--spacing-lg);
+    }
+    
+    /* Adjust content sizing for mobile */
+    .timeline-number {
+        font-size: var(--font-size-4xl);
+    }
+    
+    .timeline-title {
+        font-size: var(--font-size-lg);
+        letter-spacing: 1.5px;
+    }
+    
+    .timeline-content {
+        font-size: var(--font-size-base);
+        line-height: 1.7;
+    }
+}
+
+/* ========================================
+   RESPONSIVE DESIGN - SMALL MOBILE
+   ======================================== */
+
+@media (max-width: 480px) {
+    /* Further reduce spacing for small screens */
+    .timeline-section {
+        padding: var(--spacing-2xl) 0;
+    }
+    
+    .timeline-row {
+        margin-bottom: var(--spacing-2xl);
+    }
+    
+    .timeline-row:after {
+        bottom: calc(-1 * var(--spacing-2xl));
+    }
+    
+    /* Adjust header for small mobile */
+    .timeline-header {
+        margin-bottom: var(--spacing-2xl);
+        padding-bottom: var(--spacing-md);
+    }
+    
+    .timeline-header h2 {
+        font-size: var(--font-size-2xl);
+        letter-spacing: 1px;
+    }
+    
+    /* Reduce content padding for small screens */
+    .timeline-content-block {
+        padding-left: var(--spacing-3xl);
+        padding-right: var(--spacing-md);
+    }
+    
+    .left-content,
+    .right-content {
+        padding-left: var(--spacing-3xl);
+        padding-right: var(--spacing-md);
+    }
+    
+    /* Adjust content sizing for small mobile */
+    .timeline-number {
+        font-size: var(--font-size-3xl);
+        margin-bottom: var(--spacing-sm);
+    }
+    
+    .timeline-title {
+        font-size: var(--font-size-base);
+        margin-bottom: var(--spacing-md);
+    }
+    
+    .timeline-content {
+        font-size: var(--font-size-sm);
+    }
+}
+
+/* ========================================
+   ACCESSIBILITY FEATURES
+   ======================================== */
+
+/* Disable animations for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .timeline-row {
+        animation: none;
+        opacity: 1;
+    }
+    
+    @keyframes fadeInUp {
+        from, to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .timeline-row:after {
+        background-color: var(--color-primary);
+        width: 2px;
+    }
+    
+    .timeline-header {
+        border-bottom-width: 2px;
+    }
+}

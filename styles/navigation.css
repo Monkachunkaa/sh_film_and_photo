@@ -1,0 +1,388 @@
+/* 
+ * Navigation CSS - Header and navigation styles
+ * Sanford and Hun Film and Photography Website
+ */
+
+/* Header container */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--color-secondary);
+    box-shadow: var(--shadow-light);
+    z-index: 1000;
+    height: var(--header-height);
+    transition: box-shadow var(--transition-normal);
+}
+
+.header.scrolled {
+    box-shadow: var(--shadow-medium);
+}
+
+.header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+}
+
+/* Logo styles */
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-image {
+    height: 50px;
+    width: auto;
+    transition: transform var(--transition-fast);
+}
+
+.logo-image:hover {
+    transform: scale(1.05);
+}
+
+/* Navigation menu */
+.navigation {
+    display: flex;
+    align-items: center;
+}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: var(--spacing-xl);
+    align-items: center; /* Vertically center all nav items */
+}
+
+.nav-item {
+    position: relative;
+}
+
+.nav-link {
+    font-family: var(--font-body);
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: var(--spacing-sm) 0;
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: all var(--transition-fast);
+    position: relative;
+}
+
+/* Navigation link hover effect */
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-primary);
+    transition: width var(--transition-normal);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+.nav-link:hover {
+    opacity: 1;
+    color: var(--color-primary);
+}
+
+.nav-link.active {
+    color: var(--color-primary);
+}
+
+/* Get In Touch button in navigation */
+.nav-btn {
+    background-color: transparent;
+    color: var(--color-primary);
+    border: 2px solid var(--color-primary);
+    border-radius: 0;
+    font-family: var(--font-body);
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: var(--spacing-sm) var(--spacing-lg);
+    transition: all var(--transition-normal);
+    text-decoration: none;
+    display: inline-block;
+}
+
+.nav-btn:hover {
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
+    opacity: 1;
+}
+
+/* Active state for Get In Touch button */
+.nav-btn.active {
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
+}
+
+/* New hamburger menu styles */
+.hamburger {
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    display: none;
+}
+
+.line {
+    height: 2px;
+    width: 20px;
+    background-color: var(--color-primary);
+    position: relative;
+    top: 6px;
+    margin: 3px auto 0 auto;
+}
+
+.bottom {
+    transform: rotate(0deg) translateY(0px);
+    transition: 0.5s;
+}
+
+.hamburger.active .bottom {
+    transform: translateY(-5px) rotate(-45deg);
+    transition: 0.5s;
+}
+
+.top {
+    transform: rotate(0deg) translateY(0px);
+    transition: 0.5s;
+}
+
+.hamburger.active .top {
+    transform: translateY(5px) rotate(45deg);
+    transition: 0.5s;
+}
+
+.middle {
+    opacity: 1;
+    transition: 0.6s;
+}
+
+.hamburger.active .middle {
+    opacity: 0;
+    transition: 0.6s;
+}
+
+.border {
+    margin: auto;
+    background-color: var(--color-primary);
+}
+
+.hamburger.active .draw_top {
+    animation: rightIn 0.4s 0s forwards;
+}
+
+.draw_top.unactive {
+    animation: rightOut 0.4s 0s forwards;
+}
+
+.hamburger.active .draw_left {
+    animation: topIn 0.4s 0.3s forwards;
+}
+
+.draw_left.unactive {
+    animation: topOut 0.4s 0.3s forwards;
+}
+
+.hamburger.active .draw_bottom {
+    animation: leftIn 0.4s 0s forwards;
+}
+
+.draw_bottom.unactive {
+    animation: leftOut 0.4s 0s forwards;
+}
+
+.hamburger.active .draw_right {
+    animation: bottomIn 0.4s 0.3s forwards;
+}
+
+.draw_right.unactive {
+    animation: bottomOut 0.4s 0.3s forwards;
+}
+
+.draw_top {
+    height: 1px;
+    width: 30px;
+    position: absolute;
+    top: 0;
+    left: 35px;
+    transition: 1s;
+}
+
+.draw_left {
+    height: 29px;
+    width: 1px;
+    position: absolute;
+    top: -35px;
+    left: 0;
+    transition: 1s;
+}
+
+.draw_bottom {
+    height: 1px;
+    width: 29px;
+    position: absolute;
+    top: 29px;
+    left: -35px;
+    transition: 1s;
+}
+
+.draw_right {
+    height: 30px;
+    width: 1px;
+    position: absolute;
+    top: 35px;
+    left: 29px;
+    transition: 1s;
+}
+
+@keyframes rightIn {
+    0% { left: 35px; }
+    100% { left: 0px; }
+}
+
+@keyframes rightOut {
+    0% { left: 0px; }
+    100% { left: 35px; }
+}
+
+@keyframes topIn {
+    0% { top: -35px; }
+    100% { top: 0px; }
+}
+
+@keyframes topOut {
+    0% { top: 0px; }
+    100% { top: -35px; }
+}
+
+@keyframes leftIn {
+    0% { left: -35px; }
+    100% { left: 0px; }
+}
+
+@keyframes leftOut {
+    0% { left: 0px; }
+    100% { left: -35px; }
+}
+
+@keyframes bottomIn {
+    0% { top: 35px; }
+    100% { top: 0px; }
+}
+
+@keyframes bottomOut {
+    0% { top: 0px; }
+    100% { top: 35px; }
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    .header {
+        height: 70px;
+    }
+    
+    :root {
+        --header-height: 70px;
+    }
+    
+    .logo-image {
+        height: 40px;
+    }
+    
+    /* Show mobile menu toggle */
+    .mobile-menu-toggle.hamburger {
+        display: block;
+    }
+    
+    /* Hide desktop navigation */
+    .nav-list {
+        position: fixed;
+        top: var(--header-height);
+        left: 0;
+        right: 0;
+        background-color: var(--color-secondary);
+        flex-direction: column;
+        padding: var(--spacing-xl);
+        box-shadow: var(--shadow-medium);
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: all var(--transition-normal);
+        gap: var(--spacing-lg);
+    }
+    
+    /* Show mobile navigation when active */
+    .navigation.active .nav-list {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    .nav-link {
+        font-size: var(--font-size-base);
+        padding: var(--spacing-sm) 0;
+        text-align: center;
+        width: 100%;
+        display: block;
+    }
+    
+    .nav-link::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    /* Get In Touch button mobile styles */
+    .nav-btn {
+        width: auto;
+        margin: 0 auto;
+        padding: var(--spacing-md) var(--spacing-xl);
+        font-size: var(--font-size-base);
+        display: block;
+    }
+    
+    /* Center the button's parent nav-item */
+    .nav-item:has(.nav-btn) {
+        display: flex;
+        justify-content: center;
+    }
+    
+    /* Prevent body scroll when mobile menu is open */
+    body.menu-open {
+        overflow: hidden;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        height: 60px;
+    }
+    
+    :root {
+        --header-height: 60px;
+    }
+    
+    .logo-image {
+        height: 35px;
+    }
+    
+    .nav-list {
+        padding: var(--spacing-lg);
+    }
+}

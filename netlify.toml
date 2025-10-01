@@ -1,0 +1,37 @@
+# Netlify Configuration File
+# This file configures how Netlify builds and deploys the Sanford and Hun Film and Photography website
+
+[build]
+  # The directory where the website files are located
+  publish = "."
+  
+  # The directory where Netlify functions are located
+  functions = "netlify/functions"
+  
+  # Command to run before deploying (not needed for static sites)
+  command = "echo 'No build command required'"
+
+# Headers for security
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+# Function settings
+[functions]
+  # Directory where functions are located
+  directory = "netlify/functions"
+  
+  # Node.js version for functions
+  node_bundler = "esbuild"
+
+# Dev server settings
+[dev]
+  # Port for local development server
+  port = 8888
+  
+  # Auto-open browser
+  autoLaunch = true

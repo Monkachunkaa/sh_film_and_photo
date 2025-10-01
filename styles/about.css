@@ -1,0 +1,312 @@
+/* 
+ * About Section CSS - "Who We Are" section styles
+ * Sanford and Hun Film and Photography Website
+ */
+
+/* About section container */
+.about-section {
+    padding: var(--spacing-4xl) 0;
+    background-color: var(--color-secondary);
+}
+
+/* Section header styling */
+.section-header {
+    text-align: center;
+    margin-bottom: var(--spacing-4xl);
+}
+
+.section-title {
+    font-family: var(--font-heading);
+    font-size: var(--font-size-5xl);
+    font-weight: 400;
+    color: var(--color-primary);
+    margin-bottom: 0;
+    letter-spacing: 0.5px;
+}
+
+/* About content layout */
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-4xl);
+    align-items: center;
+}
+
+/* About text content */
+.about-text {
+    padding-right: var(--spacing-xl);
+}
+
+.about-title {
+    font-family: var(--font-heading);
+    font-size: var(--font-size-3xl);
+    font-weight: 500;
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-xl);
+    line-height: 1.2;
+}
+
+.about-description {
+    font-family: var(--font-body);
+    color: var(--color-gray-dark);
+    line-height: 1.8;
+}
+
+.about-description p {
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--spacing-lg);
+    font-weight: 400;
+}
+
+.about-description p:last-child {
+    margin-bottom: 0;
+}
+
+/* About image container */
+.about-image {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: var(--shadow-medium);
+}
+
+.about-photo {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform var(--transition-slow);
+}
+
+.about-image:hover .about-photo {
+    transform: scale(1.05);
+}
+
+/* Elegant hover effect for about image */
+.about-image::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        135deg,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 0, 0, 0.1) 100%
+    );
+    opacity: 0;
+    transition: opacity var(--transition-normal);
+    pointer-events: none;
+}
+
+.about-image:hover::after {
+    opacity: 1;
+}
+
+/* Animation for about section when it comes into view */
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Apply animations when elements are in view */
+.about-text {
+    animation: fadeInLeft 0.8s ease-out;
+}
+
+.about-image {
+    animation: fadeInRight 0.8s ease-out 0.2s both;
+}
+
+/* About CTA section */
+.about-cta {
+    animation: fadeInUp 0.8s ease-out 0.4s both;
+}
+
+/* Desktop CTA - positioned under text on left */
+.about-cta-desktop {
+    text-align: left;
+    margin-top: var(--spacing-xl);
+}
+
+/* Mobile CTA - centered below everything */
+.about-cta-mobile {
+    text-align: center;
+    margin-top: var(--spacing-4xl);
+    display: none; /* Hidden on desktop */
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Tablet styles */
+@media (max-width: 1024px) {
+    .section-title {
+        font-size: var(--font-size-4xl);
+    }
+    
+    .about-content {
+        gap: var(--spacing-3xl);
+    }
+    
+    .about-text {
+        padding-right: var(--spacing-lg);
+    }
+    
+    .about-title {
+        font-size: var(--font-size-2xl);
+    }
+    
+    .about-description p {
+        font-size: var(--font-size-base);
+    }
+    
+    .about-cta-desktop {
+        margin-top: var(--spacing-lg);
+    }
+    
+    .about-cta-mobile {
+        margin-top: var(--spacing-3xl);
+    }
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    .about-section {
+        padding: var(--spacing-3xl) 0;
+    }
+    
+    .section-header {
+        margin-bottom: var(--spacing-3xl);
+    }
+    
+    .section-title {
+        font-size: var(--font-size-3xl);
+    }
+    
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-2xl);
+        text-align: center;
+    }
+    
+    .about-text {
+        padding-right: 0;
+        order: 2;
+    }
+    
+    .about-image {
+        order: 1;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+    
+    /* Switch to mobile CTA layout */
+    .about-cta-desktop {
+        display: none;
+    }
+    
+    .about-cta-mobile {
+        display: block;
+        margin-top: var(--spacing-2xl);
+    }
+    
+    .about-title {
+        font-size: var(--font-size-2xl);
+        margin-bottom: var(--spacing-lg);
+    }
+    
+    .about-description p {
+        font-size: var(--font-size-base);
+        line-height: 1.7;
+        margin-bottom: var(--spacing-md);
+    }
+}
+
+@media (max-width: 480px) {
+    .about-section {
+        padding: var(--spacing-2xl) 0;
+    }
+    
+    .section-header {
+        margin-bottom: var(--spacing-2xl);
+    }
+    
+    .section-title {
+        font-size: var(--font-size-2xl);
+    }
+    
+    .about-content {
+        gap: var(--spacing-xl);
+    }
+    
+    .about-title {
+        font-size: var(--font-size-xl);
+        margin-bottom: var(--spacing-md);
+    }
+    
+    .about-description p {
+        font-size: var(--font-size-sm);
+        line-height: 1.6;
+    }
+    
+    .about-image {
+        max-width: 300px;
+    }
+    
+    .about-cta-mobile {
+        margin-top: var(--spacing-xl);
+    }
+}
+
+/* Prefers reduced motion - disable animations for accessibility */
+@media (prefers-reduced-motion: reduce) {
+    .about-text,
+    .about-image,
+    .about-cta-desktop,
+    .about-cta-mobile {
+        animation: none;
+    }
+    
+    .about-photo {
+        transition: none;
+    }
+    
+    .about-image::after {
+        transition: none;
+    }
+    
+    @keyframes fadeInLeft,
+    @keyframes fadeInRight,
+    @keyframes fadeInUp {
+        from, to {
+            opacity: 1;
+            transform: translateX(0) translateY(0);
+        }
+    }
+}
